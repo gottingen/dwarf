@@ -1,0 +1,9 @@
+{
+    "display_name": "my_kernel",
+    "argv": [
+        "/usr/local/bin/my_kernel",
+        "-f",
+        "{connection_file}"
+    ],
+    "language": "python"
+}
