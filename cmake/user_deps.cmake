@@ -34,12 +34,16 @@ find_package(Threads REQUIRED)
 # so you can and system pthread and rt, dl already add to
 # CARBIN_SYSTEM_DYLINK, using it for fun.
 ##########################################################
-set(LIB_PATH ${dwarf_SOURCE_DIR}/output/install)
-find_package(collie 0.2.17 REQUIRED PATHS ${LIB_PATH})
+set(LIB_PATH ${dwarf_SOURCE_DIR}/carbin)
+find_package(collie 0.2.19 REQUIRED PATHS ${LIB_PATH})
 set(OPENSSL_ROOT_DIR ${LIB_PATH})
 set(OPENSSL_USE_STATIC_LIBS ON)
 find_package(OpenSSL 1.1.1 REQUIRED)
-find_package(ZeroMQ 4.3.5 REQUIRED PATHS ${LIB_PATH})
+find_package(ZeroMQ 4.3.4 REQUIRED PATHS ${LIB_PATH})
+set(sodium_USE_STATIC_LIBS ON)
+find_package(sodium REQUIRED)
+
+find_library(UUID_LIB NAMES libuuid.a)
 
 include_directories(${collie_INCLUDE_DIRS})
 include_directories(${OPENSSL_INCLUDE_DIR})

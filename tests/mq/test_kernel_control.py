@@ -2,7 +2,7 @@ import unittest
 import jupyter_kernel_test
 
 
-class DwarfKernelTests(jupyter_kernel_test.KernelTests):
+class HerculesKernelTests(jupyter_kernel_test.KernelTests):
 
     kernel_name = "test_kernel_control"
     language_name = "cpp"
@@ -25,7 +25,7 @@ class DwarfKernelTests(jupyter_kernel_test.KernelTests):
 
     code_inspect_sample = "invalid"
 
-    def test_dwarf_stderr(self):
+    def test_hercules_stderr(self):
         reply, output_msgs = self.execute_helper(code='error')
         self.assertEqual(output_msgs[0]['msg_type'], 'stream')
         self.assertEqual(output_msgs[0]['content']['name'], 'stderr')

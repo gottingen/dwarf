@@ -25,10 +25,11 @@ carbin_cc_library(
         NAME dwarf
         SOURCES
         ${DW_ALL_SRC}
+        DEFINITIONS GUID_LIBUUID=ON
         COPTS
         ${CARBIN_CXX_OPTIONS}
         DEPS
-        ${CARBIN_DEPS_LINK} libzmq-static OpenSSL::Crypto OpenSSL::SSL
+        ${CARBIN_DEPS_LINK} libzmq-static OpenSSL::Crypto OpenSSL::SSL ${sodium_LIBRARY_RELEASE} ${UUID_LIB}
         PUBLIC
 )
 
