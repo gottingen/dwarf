@@ -73,6 +73,7 @@ install(DIRECTORY ${PROJECT_NAME}
         FILES_MATCHING
         PATTERN "*.inc"
         PATTERN "*.h"
+        PATTERN "*.hpp"
         )
 
 # Layout. This works for all platforms:
