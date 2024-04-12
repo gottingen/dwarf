@@ -40,10 +40,9 @@ set(OPENSSL_ROOT_DIR ${LIB_PATH})
 set(OPENSSL_USE_STATIC_LIBS ON)
 find_package(OpenSSL 1.1.1 REQUIRED)
 find_package(ZeroMQ 4.3.4 REQUIRED PATHS ${LIB_PATH})
-set(sodium_USE_STATIC_LIBS ON)
-find_package(sodium REQUIRED)
 
-find_library(UUID_LIB NAMES libuuid.a)
+find_package(sodium REQUIRED)
+find_library(UUID_LIB NAMES uuid)
 
 include_directories(${collie_INCLUDE_DIRS})
 include_directories(${OPENSSL_INCLUDE_DIR})
